@@ -25,7 +25,7 @@ const signup = () => {
           <input
             type="text"
             placeholder="Name"
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <div className="label">
@@ -36,7 +36,7 @@ const signup = () => {
           <input
             type="text"
             placeholder="03XX-XXXXXXX"
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <div className="label">
@@ -47,7 +47,7 @@ const signup = () => {
           <input
             type="email"
             placeholder="Email"
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <div className="label">
@@ -59,7 +59,7 @@ const signup = () => {
           <input
             type="password"
             placeholder="Password"
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <div className="label">
@@ -70,7 +70,7 @@ const signup = () => {
           <input
             type="password"
             placeholder="Confirm Password"
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <div className="label">
@@ -81,7 +81,7 @@ const signup = () => {
           <input
             type="text"
             placeholder="Rs."
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <div className="label">
@@ -90,8 +90,8 @@ const signup = () => {
             </span>
           </div>
           <details className="dropdown">
-            <summary className="m-1 btn">Adventure</summary>
-            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <summary className="m-1 btn bg-white">Adventure</summary>
+            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 bg-white">
               {travelTypes.map((item, index) => {
                 return (
                   <li key={index}>
@@ -111,7 +111,7 @@ const signup = () => {
           <input
             type="text"
             placeholder="Km"
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <div className="label">

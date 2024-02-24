@@ -13,7 +13,7 @@ const login = () => {
           <input
             type="email"
             placeholder="Email"
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <div className="label">
@@ -22,7 +22,7 @@ const login = () => {
           <input
             type="password"
             placeholder="Password"
-            className="input input-bordered w-full max-w-xs h-10"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
           />
 
           <button className="btn mt-5 h-1 opacity-100">Login</button>
