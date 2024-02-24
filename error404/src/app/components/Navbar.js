@@ -3,8 +3,8 @@ import PakTravels from "../../../public/PakTravels.webp"
 import Link from "next/link"
 export default function Navbar() {
     return (
-        <div className="justify-between flex">
-          <Image src={PakTravels} alt="Logo" height={170} width={170}/>
+        <div className="h-[25vh] justify-between flex">
+          <Image src={PakTravels} alt="Logo" height={160} width={160}/>
         
             <div>
             
