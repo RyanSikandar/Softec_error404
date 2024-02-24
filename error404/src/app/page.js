@@ -1,5 +1,7 @@
+import Card from "./components/Card";
 import Counter from "./components/Counter";
 import Navbar from "./components/Navbar";
+import TestimonialCard from "./components/TestimonialCard";
 export default function Home() {
   return (
     <main>
