@@ -12,7 +12,7 @@ const signup = () => {
     <div>
       <Navbar />
       <div
-        className="min-h-screen max-h-fit mt-[30vh] flex justify-center items-center"
+        className="pt-[30vh] flex justify-center items-center"
         style={{ background: "url(/BM-503.webp) center/cover no-repeat" }}
       >
         <label className="form-control max-w-x bg-[#EDBE73] opacity-100 p-10 rounded-lg">
