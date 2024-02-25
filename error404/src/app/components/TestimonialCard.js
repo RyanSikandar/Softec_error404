@@ -4,7 +4,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const TestimonialCard = ({ src, name, desc, align, fade }) => {
-
     useEffect(() => {
         AOS.init({
           duration: 1000,

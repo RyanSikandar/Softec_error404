@@ -1,6 +1,16 @@
+"use client"
 import Navbar from "@/app/components/Navbar";
+import { useState } from "react";
 
 const signup = () => {
+  const [name,setName]=useState("")
+  const [phone,setPhone]=useState("")
+  const [email,setEmail]=useState("")
+  const [password,setPassword]=useState("")
+  const [budget,setBudget]=useState("")
+  const [travel,setTravel]=useState("Adventure")
+  const [distance,setDistance]=useState("")
+  const [cnfpass,setCnfPass]=useState("")
   const travelTypes = [
     "Adventure",
     "Family",
@@ -8,6 +18,16 @@ const signup = () => {
     "Luxury",
     "Business",
   ];
+  const handleClick = async () => {
+    if (name != "" || phone != "" || email != "" || budget != "" || password != "") {
+      let result = await fetch("https://pak-travel-4662670627ff.herokuapp.com/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password })
+      });
+    }
+    else { alert("Please fill in your details properly") }
+
+  }
   return (
     <div>
       <Navbar />
@@ -23,6 +43,8 @@ const signup = () => {
             </span>
           </div>
           <input
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
             type="text"
             placeholder="Name"
             className="input input-bordered w-full max-w-xs h-10 bg-white"
@@ -34,6 +56,8 @@ const signup = () => {
             </span>
           </div>
           <input
+          value={phone}
+          onChange={(e)=>setPhone(e.target.value)}
             type="text"
             placeholder="03XX-XXXXXXX"
             className="input input-bordered w-full max-w-xs h-10 bg-white"
@@ -45,6 +69,8 @@ const signup = () => {
             </span>
           </div>
           <input
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
             type="email"
             placeholder="Email"
             className="input input-bordered w-full max-w-xs h-10 bg-white"
@@ -57,6 +83,8 @@ const signup = () => {
           </div>
 
           <input
+          value={password}
+          onChange={(e)=>setPassword(e.target.value)}
             type="password"
             placeholder="Password"
             className="input input-bordered w-full max-w-xs h-10 bg-white"
@@ -68,6 +96,8 @@ const signup = () => {
             </span>
           </div>
           <input
+          value={cnfpass}
+          onChange={(e)=>setCnfPass(e.target.value)}
             type="password"
             placeholder="Confirm Password"
             className="input input-bordered w-full max-w-xs h-10 bg-white"
@@ -79,6 +109,8 @@ const signup = () => {
             </span>
           </div>
           <input
+          value={budget}
+          onChange={(e)=>setBudget(e.target.value)}
             type="text"
             placeholder="Rs."
             className="input input-bordered w-full max-w-xs h-10 bg-white"
@@ -89,18 +121,16 @@ const signup = () => {
               Travel Type
             </span>
           </div>
-          <details className="dropdown">
-            <summary className="m-1 btn bg-white">Adventure</summary>
-            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 bg-white">
+
+            <select className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 bg-white">
               {travelTypes.map((item, index) => {
                 return (
-                  <li key={index}>
+                  <option key={index} value={item} onClick={(e)=>setTravel(e.target.value)}>
                     <a>{item}</a>
-                  </li>
+                  </option>
                 );
               })}
-            </ul>
-          </details>
+            </select>
 
           <div className="label">
             <span className="label-text font-bold text-lg  text-black">
@@ -109,6 +139,8 @@ const signup = () => {
           </div>
 
           <input
+          value={distance}
+          onChange={(e)=>setDistance(e.target.value)}
             type="text"
             placeholder="Km"
             className="input input-bordered w-full max-w-xs h-10 bg-white"
@@ -120,7 +152,7 @@ const signup = () => {
             </span>
           </div>
 
-          <button className="btn mt-5 h-1 opacity-100">Signup</button>
+          <button className="btn mt-5 h-1 opacity-100" onClick={handleClick}>Signup</button>
         </label>
       </div>
     </div>
