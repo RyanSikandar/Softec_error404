@@ -14,7 +14,6 @@ const login = () => {
       });
     }
     else { alert("Please fill in your details properly") }
-
   }
   return (
     <div>

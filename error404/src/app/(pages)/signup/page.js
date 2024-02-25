@@ -11,6 +11,7 @@ const signup = () => {
   const [travel,setTravel]=useState("Adventure")
   const [distance,setDistance]=useState("")
   const [cnfpass,setCnfPass]=useState("")
+  const [currentLocation,setCurrentLocation]=useState("")
   const travelTypes = [
     "Adventure",
     "Family",
@@ -19,11 +20,12 @@ const signup = () => {
     "Business",
   ];
   const handleClick = async () => {
-    if (name != "" || phone != "" || email != "" || budget != "" || password != "") {
+    if (name != "" || phone != "" || email != "" || budget != "" || password != "" || currentLocation != "") {
       let result = await fetch("https://pak-travel-4662670627ff.herokuapp.com/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password })
       });
+      console.log(result);
     }
     else { alert("Please fill in your details properly") }
 
@@ -151,6 +153,13 @@ const signup = () => {
               Current Location
             </span>
           </div>
+          <input
+          value={currentLocation}
+          onChange={(e)=>setCurrentLocation(e.target.value)}
+            type="text"
+            placeholder="Current Location"
+            className="input input-bordered w-full max-w-xs h-10 bg-white"
+          />
 
           <button className="btn mt-5 h-1 opacity-100" onClick={handleClick}>Signup</button>
         </label>
