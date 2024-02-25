@@ -15,7 +15,7 @@ const Reviews = () => {
                     <button className="btn ml-8 text-white hover:border-2 hover:bg-white hover:text-black">Submit</button>
                 </div>
 
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap items-center justify-center">
                     <Review name={"Gosal"} review={"lovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelove"} />
                     <Review name={"Gosal"} review={"love"} />
                     <Review name={"Gosal"} review={"love"} />
