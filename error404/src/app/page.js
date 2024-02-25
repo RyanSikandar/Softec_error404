@@ -3,6 +3,21 @@ import Counter from "./components/Counter";
 import Navbar from "./components/Navbar";
 import TestimonialCard from "./components/TestimonialCard";
 export default function Home() {
+  const testimonial = [
+    {
+      src:"/person2.webp", name:"Jenny", desc:"Luvitt!!!"
+    },
+    {
+      src:"/person1.webp", name:"Daisy", desc:"Wonderful!!"
+    },
+    {
+      src:"/person4.webp", name:"Jonas", desc:"Had Fun!!"
+    },
+    {
+      src:"/person3.webp", name:"Dory", desc:"Nice!!!"
+    },
+  ]
+
   return (
     <main>
       <Navbar />
@@ -44,10 +59,17 @@ export default function Home() {
 
         <p className="text-6xl font-semibold text-center my-14">Testimonials</p>
 
-        <TestimonialCard src={"/person2.webp"} name={"Jenny"} desc={"Luvitt!!!"} align={"start"} fade={"right"} />
-        <TestimonialCard src={"/person1.webp"} name={"Daisy"} desc={"Wonderful!!!"} align={"end"} fade={"left"} />
-        <TestimonialCard src={"/person1.webp"} name={"Jonas"} desc={"Bangin!!"} align={"start"} fade={"right"} />
-        <TestimonialCard src={"/person3.webp"} name={"Dory"} desc={"Helpful."} align={"end"} fade={"left"} />
+    {
+      testimonial.map((item, index)=>{
+        let align = index%2===0 ? "start" : "end";
+        let fade = align === "start" ? "right" : "left";
+        return (
+          <TestimonialCard src={item.src} name={item.name} desc={item.desc} align={align} fade={fade} />
+        )
+      })
+    }
+        
+        
 
       </div>
 

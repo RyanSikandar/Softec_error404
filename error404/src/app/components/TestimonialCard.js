@@ -12,6 +12,8 @@ const TestimonialCard = ({ src, name, desc, align, fade }) => {
         });
       }, []);
 
+      console.log(align);
+
     return (
         <div data-aos={`fade-${fade}`} className={`card card-compact w-96 bg-base-100 shadow-xl self-${align}`}>
             <figure><img src={src} alt="pics" /></figure>
